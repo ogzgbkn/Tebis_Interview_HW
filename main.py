@@ -91,19 +91,16 @@ def calc_max_path_recursive(triangle, memory_dict, node_row_count, node_row_idx)
 
 	# If the node has a left child
 	if check_left_child(triangle, node_row_count, node_row_idx):
-
 		left_subtree_max = calc_max_path_recursive(triangle, memory_dict, node_row_count + 1, node_row_idx)
 
 	# If the node has a right child
 	if check_right_child(triangle, node_row_count, node_row_idx):
-
 		right_subtree_max = calc_max_path_recursive(triangle, memory_dict, node_row_count + 1, node_row_idx + 1)
 
 	node = triangle[node_row_count][node_row_idx]
 
 	# If the node has at least 1 child
 	if left_subtree_max or right_subtree_max:
-
 		val_to_return = None
 		
 		# If there are both childs, check which value from which subtree (left or right) is bigger
