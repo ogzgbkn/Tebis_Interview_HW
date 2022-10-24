@@ -2,6 +2,25 @@
 Author: Oğuz Gögebakan
 Date: 23.10.22
 Maximum Path Sum Problem
+
+Answers:
+Part 1: 1074
+Part 2: 7273
+
+Approach:
+- Firstly, a function to read the txt file is developed (read_triangle). Txt file is stored in a list of lists.
+- Secondly, a recursive function to analyze the triangle is developed. The function actually checks for every possible path in a recursive way.
+- Thirdly, the program is tested. It worked so slow in the part 2. Thus, a memory mechanism is added to the program. For a node, it descendants's
+max path sum is stored in a dictionary. So before calculating a node's descendants' max path sum, the program first checks the dictionary if it is
+calculated before (This is recursion with memory (Dynamic programming)).
+- Unit tests are not written since the program is quite simple. Yet, there is a mechanism which checks whether the given TXT consists of integers.
+- This code will work best if the given triangle is a complete tree. This means that every node has either 2 childs or no children. Still, the code
+may work if the triangle is not complete since a mechanism is developed and it runs when a node has only one child.
+
+Comments:
+- Since this is a code which uses recursion, if the given triangle is TOO big, Python's recursion stack may not be adequate. The recursion stack of
+C++ is much higher.
+- I could have used multiple files if the task was more complicated.
 """
 
 import sys
